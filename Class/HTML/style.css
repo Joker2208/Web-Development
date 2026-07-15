@@ -60,13 +60,13 @@ h1{
     margin-top: 10px;
 }
 
-nav > ul{
+nav ul{
     display: flex;
     gap: 30px;
     margin-left: auto;    
 }
 
-li{
+nav li{
     color: rgb(255, 255, 255, 0.65);
     font-size: 0.65em;
 }
@@ -86,14 +86,15 @@ li{
     gap: 10px;
     width: 180px;
     font-size: 2em;
-    margin-top: 20px;
-    border-radius: 4px;
     z-index: 1;
+    padding-top: 20px;
+    background-clip: content-box;
 }
 
 #home:hover ul{
     display: flex;
-    position: sticky;
+    border-radius: 4px;
+    padding: 15px;
 }
 
 #home:hover{
@@ -101,14 +102,12 @@ li{
     color: black;
     padding: 3px 3px;
     border-radius: 4px;
-
 }
 
 #home ul li{
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     padding: 10px 15px;
 }
-
 
 #page{
     position: relative;
@@ -125,9 +124,9 @@ li{
     gap: 10px;
     width: 250px;
     font-size: 2em;
-    margin-top: 20px;
-    border-radius: 4px;
     z-index: 20;
+    padding-top: 20px;
+    background-clip: content-box;
 }
 
 #page:hover ul{
@@ -142,7 +141,6 @@ li{
     color: black;
     padding: 3px 3px;
     border-radius: 4px;
-
 }
 
 #page ul li{
@@ -194,14 +192,14 @@ h2{
     margin-right: 150px;
 }
 
-#preview, #rtl{
+.preview-btn, #rtl{
     padding: 8px 30px;
     font-size: 1em;
     border-radius: 4px;
     border: none;
 }
 
-#preview {
+.preview-btn {
     position: relative;
     overflow: hidden;
     background-color: black;
@@ -210,7 +208,7 @@ h2{
     transition: color 0.4s ease;
 }
 
-#preview::before {
+.preview-btn::before {
     content: "";
     position: absolute;
     top: 0;
@@ -223,12 +221,12 @@ h2{
     z-index: -1;
 }
 
-#preview:hover {
+.preview-btn:hover {
     color: black;
     border: 1px solid black;
 }
 
-#preview:hover::before {
+.preview-btn:hover::before {
     transform: translateY(0%);
 }
 
@@ -249,28 +247,40 @@ h2{
 
 .grid1{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 500px);
     row-gap: 80px;
+    column-gap: 20px;
+    padding: 40px 100px;
+    column-gap: 80px;
+    justify-content: center;
 }
 
 .grid1 img{
-    margin-top: 20px;
-    margin-left: 40px;
-    margin-bottom: 20px;
     height: 300px;
+    width: 100%;
+    object-fit: cover;
     border-radius: 10px;
+    display: block;
+    transition: transform 1s ease;
+
 }
 
 .wrap{
     position: relative;
-    height: 300px;
+    height: auto;
     font-size: 1.15em;
     text-align: center;
     text-transform: uppercase;
-    transition:transform 1s ease;
+    
 }
 
-.wrap:hover img{
+.sub-wrap{
+    position: relative;
+    height: 300px;
+    
+}
+
+.sub-wrap:hover img{
     transform: translateY(-10px);
 }
 
@@ -278,15 +288,227 @@ h2{
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity:0;
+    opacity: 0;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     padding: 8px 35px;
+    background-color: rgb(0,0,0,0.8);
+    border-radius: 10px;
+    transition: transform 1s ease, opacity 1s ease;
+    
 }
 
-.overlay:hover{
+.sub-wrap:hover .overlay{
     opacity: 1;
+    transform: translateY(-10px);
+
+}
+
+.wrap p{
+    margin-top: 25px;
+}
+
+.preview-btn2{
+    padding: 6px 25px;
+    font-size: 0.85em;
+    border-radius: 4px;
+    border: 1px solid white;
+    font-weight: 100px;
+}
+
+.preview-btn2{
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+    color: black;
+    z-index: 1;
+    transition: color 0.4s ease;
+}
+
+.preview-btn2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    transform: translateY(-100%);
+    transition: transform 0.4s ease;
+    z-index: -1;
+}
+
+.preview-btn2:hover {
+    color: white;
+    border: 1px solid white;
+}
+
+.preview-btn2:hover::before {
+    transform: translateY(0%);
+}
+
+.review{
+    /* min-height: 250px; */
+    align-items: center;
+    margin: 0 auto;
+    max-width: 800px;
+    background-color: white;
+    border: 1px;
+    border-radius: 10px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+.rbody{
+    background-image: linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.3)), url(showcase-testimonial.jpg);
+    height: 550px;
+    width: 100%;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+}
+
+#p4{
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+    margin-top: -100px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    color: white;
+    font-weight: bold;
+    font-size: xx-large;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    background-color: #5c6491;
+}
+
+#p5{
+    width: 800px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 100px;
+    font-size: small;
+    margin-top: 25px;
+}
+
+#stars{
+    color: gold;
+}
+
+.name{
+    align-items: center;
+    padding: 30px 100px;
+}
+
+.rate{
+    display: flex;
+    align-items: center;
+    padding-right: 100px;
+}
+
+.info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.name p{
+    font-size: small;
+    color: gray;
+}
+
+.features{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    gap: 70px;
+}
+
+.features h4{
+    font-size: larger;
+}
+
+.features ul{
+    color: gray;
+    font-size: small;
+    
+}
+
+.key{
+    margin-top: 80px;
+    height: 350px;
+    width: 400px;
+    display: flex;
+    justify-content: left;
+    margin-top: -20px;
+    
+}
+
+.feature-text li::before{
+    content: "✔";
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.feature-text li{
+    margin-bottom: 15px;
+}
+
+.feature-text h4{
+    font-size: x-large;
+    margin-bottom: 10px;
+}
+
+.feature-text button{
+    margin-top: 20px;
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: white;
+    font-weight: 600;
+}
+
+#docu{
+    padding: 10px 30px;
+    font-size: 0.85em;
+    border-radius: 4px;
+    border: 1px solid black;
+    font-weight: 100px;
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+    color: black;
+    z-index: 1;
+    transition: color 0.4s ease;
+}
+
+#docu::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    transform: translateY(-100%);
+    transition: transform 0.4s ease;
+    z-index: -1;
+}
+
+#docu:hover {
+    color: white;
+    border: 1px solid white;
+}
+
+#docu:hover::before {
+    transform: translateY(0%);
 }

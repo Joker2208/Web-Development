@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Badge</title>
+    <style>
+        body {
+            height: 1500px;
+            font-family: sans-serif;
+        }
+
+    
+        .whatsapp-button {
+            position: fixed;      
+            bottom: 20px;       
+            right: 20px;          
+            background: green;    
+            color: white;         
+            width: 250px;          
+            height: 60px;         
+            border-radius: 4%;   
+            text-align: center;   
+            line-height: 60px;   
+            text-decoration: none;
+        }
+
+     
+        .badge {
+            position: absolute;   
+            top: 0px;             
+            right: 0px;           
+            background: red;     
+            color: white;       
+            width: 20px;         
+            height: 20px;         
+            border-radius: 50%;   
+            line-height: 20px;    
+            font-size: 12px;      
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Scroll down!</h2>
+
+    <a href="#" class="whatsapp-button">
+        You have 3 new notifications
+        <span class="badge">3</span>
+    </a>
+
+</body>
+</html>
