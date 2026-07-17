@@ -8,9 +8,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
     <link rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
+<script>
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            document.querySelector('nav').classList.add('scrolled');
+        } else {
+            document.querySelector('nav').classList.remove('scrolled');
+        }
+    });
+</script>
+
 <body>
     <div class="hero">
         <nav>
@@ -19,7 +30,7 @@
             </div>
 
             <ul>
-                <li id="home">HOME &#9660
+                <li id="home">HOME <i class="fa-solid fa-chevron-down"></i>
                     <ul>
                         <li>Page</li>
                         <li>Slider Header</li>
@@ -28,7 +39,7 @@
                         <li>Static Footer</li>
                     </ul>
                 </li>
-                <li id="page">PAGES &#9660
+                <li id="page">PAGES <i class="fa-solid fa-chevron-down"></i>  
                     <ul>
                         <li>About</li>
                         <li>Service</li>
@@ -38,8 +49,8 @@
                         <li>Address</li>
                     </ul>
                 </li>
-                <li>COMPONENTS &#9660</li>
-                <li>DOCS &#9660</li>
+                <li>COMPONENTS <i class="fa-solid fa-chevron-down"></i></li>
+                <li>DOCS <i class="fa-solid fa-chevron-down"></i></li>
             </ul>
         </nav>
 
@@ -170,8 +181,59 @@
 
     <div class="end">
         <h4>EXCITED TO START A NEW PROJECT?</h4>
-        <button>GET IT NOW</button>
+        <button class="button5">GET IT NOW</button>
     </div>
    
+    <footer>
+        <div class="foot">
+            <div class="mission">
+                <h4>OUR MISSION</h4>
+                <p>Our mission is to deliver optimal solutions with quality and services at reasonable prices. For us customer satisfaction is given top place. We are very friendly in our dealings to the customers and it helps us retain existing clients and expand customer circle. We always try to improve the quality of our products by exploring innovative ideas and our service.</p>
+
+                <div class="social-icons">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-brands fa-google-plus"></i>
+            </div>
+            </div>
+
+            <div class="company">
+                <h4>Company</h4>
+                <ul>
+                    <li>About</li>
+                    <li>Contact</li>
+                    <li>Blog</li>
+                    <li>Gallery</li>
+                    <li>Privacy</li>
+                    <li>Careers</li>
+                </ul>
+            </div>
+
+            <div class="product">
+                <h4>Product</h4>
+                <ul>
+                    <li>Work</li>
+                    <li>Services</li>
+                    <li>Pricing</li>
+                    <li>Features</li>
+                    <li>Docs</li>
+                    <li>Agencies</li>
+                </ul>
+            </div>
+
+            <div class="blog">
+                <h4>FROM THE BLOG</h4>
+                <p>Testing Working Robots at the Canadian Agency. <br>Jan, 15 2022</p>
+                <p>How to start your new business with limited budget? <br>Jan 15, 2022</p>
+                <p>Do we need more Javascript Framework? <br>Jan 15,2022</p>
+            </div>
+        </div>
+
+        <div class="copy">
+            <p>Thank you for creating with Reign © 2025| v5.1.0</p>
+            <p>Made with <span>&#10084</span> by Dipesh</p>
+        </div>
+    </footer>
 </body>
 </html>

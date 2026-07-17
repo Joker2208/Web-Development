@@ -1,0 +1,5 @@
+Python (Interpreted): Executes code line-by-line using an interpreter. If there's an error on line 10, it will run lines 1 through 9 before crashing. 
+Example: A live translator translating a speech word-for-word as it happens.
+
+C / Java (Compiled): Translates the entire code into machine code (or bytecode) all at once before running it. If there is a single error anywhere, it won't run at all. 
+Example: Translating an entire book into another language before anyone is allowed to read it.

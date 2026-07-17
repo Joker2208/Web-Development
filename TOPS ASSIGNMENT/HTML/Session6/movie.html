@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMyShow Grid</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .movie-grid {
+            display: flex;
+            gap: 20px; 
+            justify-content: center;
+        }
+
+        .movie-card {
+            position: relative;
+            width: 200px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .movie-poster {
+            width: 100%;
+            height: 280px;
+            background-color: #ddd; 
+            display: block;
+        }
+
+        .movie-info {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .new-badge {
+            position: absolute; 
+            top: 10px;          
+            left: 10px;         
+            background-color: #dc3545; 
+            color: white;       
+            padding: 5px 10px;  
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2 style="text-align: center; margin-bottom: 20px;">Trending Movies</h2>
+
+    <div class="movie-grid">
+
+        <div class="movie-card">
+            <span class="new-badge">NEW</span>
+            <img src="Spider-Man_Brand_New_Day_poster.jpg" alt="" class="movie-poster">
+            <div class="movie-info">
+                <h4>Spiderman: Brand New Day</h4>
+            </div>
+        </div>
+
+        <div class="movie-card">
+            <img src="The_Odyssey_(2026_film)_poster.jpg" alt="" class="movie-poster">
+            <div class="movie-info">
+                <h4>The Odyssey</h4>
+                
+            </div>
+        </div>
+
+        <div class="movie-card">
+            <img src="rbe3PBtDMcNCexmwx3h3W4-768-80.jpg" alt="" class="movie-poster">
+            <div class="movie-info">
+                <h4>Interstellar</h4>
+                
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
