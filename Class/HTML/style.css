@@ -684,3 +684,31 @@ button{
     animation: slideUpOnce 1s ease;
 }
 
+
+
+
+/******************************Responsivness***********************************/
+
+@media(max-width: 768px){
+        .foot{
+            flex-wrap: wrap;
+        }
+}
+
+@media(max-width: 768px){
+        .mission{
+            width: 48%;
+        }
+}
+
+@media(max-width: 768px){
+        .company{
+            width: 48%;
+        }
+}
+
+@media(max-width: 768px){
+        .product{
+            width: 48%;
+        }
+}
