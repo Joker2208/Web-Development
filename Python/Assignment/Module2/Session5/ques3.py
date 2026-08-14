@@ -9,5 +9,5 @@ menu = {
     }
 }
 
-menu["gurung momos"]={"cuisine":"Nepali","rating":4.34}
+menu["gurung momos"]["rating"]=4.34
 print(menu)
