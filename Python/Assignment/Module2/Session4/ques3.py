@@ -1,0 +1,5 @@
+order = ('Burger', 'Fries', 'Coke') 
+new = list(order)
+new.append("Ice Cream")
+order = tuple(new)
+print(order)
