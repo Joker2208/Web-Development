@@ -1,5 +1,5 @@
 f = open("playlist.txt","w")
-songs = ["God's Plan \n","Arz kiya hai, Anuv jain\n","Bling \n"]
+songs = ["God's Plan \n","Arz kiya hai, Anuv jain\n","Bling \n","Hello"]
 f.writelines(songs)
 f.close()
 
