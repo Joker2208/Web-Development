@@ -1,0 +1,22 @@
+1. manage.py
+This is the command-line utility for the Django project. It's used to run the development server (runserver), create and apply database migrations (makemigrations, migrate), create new apps (startapp), and execute other administrative commands.
+
+2. settings.py
+This file holds the entire configuration of the project. It defines the list of installed apps, database settings, template paths, static files configuration, timezone, secret key, allowed hosts, and other project-wide settings.
+
+3. urls.py
+This is the URL routing table. It maps URL patterns to their corresponding views, telling Django which view function should handle a given URL. At the project level, it typically uses include() to connect each app's own urls.py.
+
+4. wsgi.py
+This is the entry point for WSGI (Web Server Gateway Interface) compatible web servers. It's used for deploying the project on traditional synchronous servers like Apache or Gunicorn.
+
+5. asgi.py
+This is the entry point for ASGI (Asynchronous Server Gateway Interface) compatible servers. It supports asynchronous features like WebSockets and is used for deploying the project on modern async-capable servers.
+
+QUESTION4
+
+Django is a "batteries-included" framework — it comes with built-in features like an ORM, admin panel, authentication, and security tools, making it ideal for large, complex apps that need to scale quickly. Flask, on the other hand, is a lightweight micro-framework that gives developers more flexibility and control, since it doesn't force a specific project structure or bundle extra features by default — you add only what you need.
+
+Example: Think of an app like Zomato. It has to handle a large database of restaurants, user accounts, reviews, orders, and an admin dashboard for restaurant owners — all of which Django handles well out of the box with its ORM and admin panel. A framework like Flask would require manually adding many of these features, making Django a better fit for an app of this scale and complexity.
+
+For a smaller app, like a simple calorie tracker or a personal blog with a handful of routes, Flask would be quicker to set up since you don't need Django's full feature set.
