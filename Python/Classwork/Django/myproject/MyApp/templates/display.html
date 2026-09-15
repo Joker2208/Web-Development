@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Records</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAF6ED;
+    --ledger-line:#DCD2B8;
+    --navy:#1B2A4A;
+    --navy-soft:#2E3F63;
+    --ink:#22252B;
+    --gold:#B8912F;
+    --gold-soft:#E8D9AE;
+  }
+
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    padding:48px 16px;
+  }
+
+  .list-shell{
+    max-width:900px;
+    margin:0 auto;
+    background:#fff;
+    border-radius:2px;
+    box-shadow:0 1px 2px rgba(27,42,74,0.08), 0 18px 40px -20px rgba(27,42,74,0.35);
+    border:1px solid rgba(27,42,74,0.08);
+    overflow:hidden;
+  }
+
+  .list-header{
+    background:var(--navy);
+    color:#fff;
+    padding:28px 32px;
+  }
+
+  .list-header .kicker{
+    font-size:0.72rem;
+    letter-spacing:0.03em;
+    color:var(--gold-soft);
+    margin-bottom:6px;
+  }
+
+  .list-header h1{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    font-size:1.7rem;
+    margin:0;
+  }
+
+  .table-wrap{
+    padding:8px 32px 32px;
+  }
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+  }
+
+  thead th{
+    text-align:left;
+    font-size:0.72rem;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    color:var(--navy-soft);
+    font-weight:600;
+    padding:14px 10px;
+    border-bottom:2px solid var(--navy);
+  }
+
+  tbody td{
+    padding:14px 10px;
+    border-bottom:1px solid var(--ledger-line);
+    font-size:0.95rem;
+  }
+
+  tbody tr:nth-child(even){
+    background:#FBF8F1;
+  }
+
+  tbody tr:hover{
+    background:var(--gold-soft);
+  }
+
+  td.name{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+  }
+
+  td.age{
+    text-align:center;
+    width:80px;
+  }
+
+  .count-note{
+    font-size:0.8rem;
+    color:#6b6455;
+    margin-top:14px;
+  }
+
+  @media (max-width: 600px){
+    .list-header, .table-wrap{ padding-left:20px; padding-right:20px; }
+    thead th:nth-child(2), tbody td:nth-child(2){ display:none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="list-shell">
+  <div class="list-header">
+    <div class="kicker">ADMISSIONS &middot; FALL TERM</div>
+    <h1>Registered students</h1>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Full name</th>
+          <th>Email address</th>
+          <th class="age">Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="name">Dipesh Tambakhe</td>
+          <td>dipesh@example.com</td>
+          <td class="age">18</td>
+        </tr>
+        <tr>
+          <td class="name">Aarav Shah</td>
+          <td>aarav.shah@example.com</td>
+          <td class="age">19</td>
+        </tr>
+        <tr>
+          <td class="name">Priya Mehta</td>
+          <td>priya.mehta@example.com</td>
+          <td class="age">20</td>
+        </tr>
+        <tr>
+          <td class="name">Rohan Verma</td>
+          <td>rohan.verma@example.com</td>
+          <td class="age">18</td>
+        </tr>
+        <tr>
+          <td class="name">Ishita Patel</td>
+          <td>ishita.patel@example.com</td>
+          <td class="age">21</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="count-note">5 students registered this term.</p>
+  </div>
+</div>
+
+</body>
+</html>
