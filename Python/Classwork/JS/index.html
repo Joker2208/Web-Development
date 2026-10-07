@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+
+    <script>
+        // function test()
+        // {
+        //     var name = document.getElementById("name").value 
+        //     var op =  document.getElementById("op")
+        //     op.innerHTML = name
+        //     // alert(name)
+        // }
+
+        function add()
+        {
+            var num1 = document.getElementById("num1").value
+            var num2 = document.getElementById("num2").value
+            var total = document.getElementById("total")
+            total.innerHTML = Number(num1) + Number(num2);
+       }
+
+
+        function sub()
+        {
+            var num1 = document.getElementById("num1").value
+            var num2 = document.getElementById("num2").value
+            var total = document.getElementById("total")
+            total.innerHTML = Number(num1) - Number(num2);
+       }
+
+
+        function mul()
+        {
+            var num1 = document.getElementById("num1").value
+            var num2 = document.getElementById("num2").value
+            var total = document.getElementById("total")
+            total.innerHTML = Number(num1) * Number(num2);
+       }
+
+
+        function div()
+        {
+            var num1 = document.getElementById("num1").value
+            var num2 = document.getElementById("num2").value
+            var total = document.getElementById("total")
+            total.innerHTML = Number(num1) / Number(num2);
+       }
+    </script>
+</head>
+
+<body>
+<!--     
+    <input type="text" id="name">
+    <button onclick="test()">CLICK ME</button>
+    <span id="op"></span> -->
+
+    <input type="number" id="num1"><br><br>
+    <input type="number" id="num2"><br><br>
+    <button onclick="add()">+</button>
+    <button onclick="sub()">-</button>
+    <button onclick="mul()">*</button>
+    <button onclick="div()">/</button>
+    <span id="total"></span>
+</body>
+</html>
