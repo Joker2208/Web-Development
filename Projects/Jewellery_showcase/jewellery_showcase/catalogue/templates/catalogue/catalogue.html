@@ -1,0 +1,28 @@
+{% extends "catalogue/base.html" %}
+{% block title %}Collection | {{ shop_name }}{% endblock %}
+{% block content %}
+<div class="container py-5">
+  <h1 class="section-title">Our collection</h1>
+  <form method="get" class="row g-2 mb-4">
+    <div class="col-md-4"><input class="form-control" name="q" value="{{ q }}" placeholder="Search jewellery"></div>
+    <div class="col-6 col-md-2"><select class="form-select" name="category"><option value="">All categories</option>{% for c in categories %}<option value="{{ c.slug }}" {% if cat == c.slug %}selected{% endif %}>{{ c.name }}</option>{% endfor %}</select></div>
+    <div class="col-6 col-md-2"><select class="form-select" name="material"><option value="">Any material</option>{% for value, label in materials %}<option value="{{ value }}" {% if material == value %}selected{% endif %}>{{ label }}</option>{% endfor %}</select></div>
+    <div class="col-6 col-md-2"><select class="form-select" name="sort">
+      <option value="new" {% if sort == 'new' %}selected{% endif %}>Newest</option><option value="low" {% if sort == 'low' %}selected{% endif %}>Price: low to high</option>
+      <option value="high" {% if sort == 'high' %}selected{% endif %}>Price: high to low</option><option value="name" {% if sort == 'name' %}selected{% endif %}>Name</option></select></div>
+    <div class="col-6 col-md-2"><button class="btn btn-gold w-100">Apply</button></div>
+  </form>
+  <p class="text-muted">{{ page.paginator.count }} piece{{ page.paginator.count|pluralize }} found</p>
+  <div class="row g-4">
+    {% for jewel in page %}<div class="col-6 col-lg-4">{% include "catalogue/_card.html" %}</div>
+    {% empty %}<div class="col-12 text-center text-muted py-5">No jewellery matches your search.</div>{% endfor %}
+  </div>
+  {% if page.has_other_pages %}
+  <nav class="mt-5"><ul class="pagination justify-content-center">
+    {% if page.has_previous %}<li class="page-item"><a class="page-link" href="?{{ querystring }}&page={{ page.previous_page_number }}">Previous</a></li>{% endif %}
+    <li class="page-item disabled"><span class="page-link">Page {{ page.number }} of {{ page.paginator.num_pages }}</span></li>
+    {% if page.has_next %}<li class="page-item"><a class="page-link" href="?{{ querystring }}&page={{ page.next_page_number }}">Next</a></li>{% endif %}
+  </ul></nav>
+  {% endif %}
+</div>
+{% endblock %}

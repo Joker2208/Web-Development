@@ -1,0 +1,10 @@
+<div class="card jewel-card">
+  <a href="{{ jewel.get_absolute_url }}">
+    {% if jewel.image %}<img class="jewel-img" src="{{ jewel.image.url }}" alt="{{ jewel.name }}" loading="lazy">{% else %}<div class="jewel-placeholder" role="img" aria-label="{{ jewel.name }}">&#128142;</div>{% endif %}
+  </a>
+  <div class="card-body">
+    <div class="small text-muted text-uppercase">{{ jewel.category.name }} &middot; {{ jewel.get_material_display }}</div>
+    <h3 class="h5 mt-1"><a class="text-decoration-none text-dark" href="{{ jewel.get_absolute_url }}">{{ jewel.name }}</a></h3>
+    <div class="price">₹{{ jewel.price|floatformat:0 }}</div>
+  </div>
+</div>

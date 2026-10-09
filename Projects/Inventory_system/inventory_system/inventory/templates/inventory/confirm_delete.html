@@ -1,0 +1,9 @@
+{% extends "inventory/base.html" %}
+{% block title %}Delete product{% endblock %}
+{% block content %}
+<div class="card shadow-sm mx-auto" style="max-width:520px"><div class="card-body p-4">
+  <h1 class="h4">Delete {{ product.name }}?</h1>
+  <p class="text-muted">This cannot be undone. Products with stock history cannot be deleted.</p>
+  <form method="post">{% csrf_token %}<button class="btn btn-danger">Yes, delete</button> <a class="btn btn-link" href="{% url 'product_list' %}">Cancel</a></form>
+</div></div>
+{% endblock %}

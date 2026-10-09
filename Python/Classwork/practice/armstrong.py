@@ -1,4 +1,4 @@
-num = int(input("Enter:"))
+num = int(input("Enter num:"))
 length = len(str(num))
 
 temp = num
@@ -9,7 +9,7 @@ while temp > 0:
     sum += digit ** length
     temp = temp // 10
 
-if sum == num:
+if num == sum:
     print("yes")
 else:
     print("no")

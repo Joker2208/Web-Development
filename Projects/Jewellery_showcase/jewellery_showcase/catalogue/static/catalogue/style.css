@@ -1,0 +1,27 @@
+:root { --gold: #b8923b; --ink: #1d1b19; --cream: #faf6ef; }
+body { background: var(--cream); color: var(--ink); font-family: "Lato", system-ui, sans-serif; }
+h1, h2, h3, .brand { font-family: "Playfair Display", Georgia, serif; }
+.navbar { background: var(--ink); }
+.navbar .brand { color: var(--gold); font-size: 1.6rem; letter-spacing: .06em; text-decoration: none; }
+.navbar .nav-link { color: #e9e1d2; }
+.navbar .nav-link:hover, .navbar .nav-link.active { color: var(--gold); }
+.btn-gold { background: var(--gold); color: #fff; border: 0; }
+.btn-gold:hover { background: #9a7a2f; color: #fff; }
+.btn-outline-gold { border: 1px solid var(--gold); color: var(--gold); }
+.btn-outline-gold:hover { background: var(--gold); color: #fff; }
+.hero { background: linear-gradient(135deg, #1d1b19 0%, #3a3026 100%); color: #f5eedf; padding: 6rem 0; }
+.hero h1 { font-size: clamp(2.2rem, 6vw, 4rem); }
+.hero .lead { color: #d8cfbd; }
+.section-title { text-align: center; margin-bottom: 2rem; }
+.section-title::after { content: ""; display: block; width: 60px; height: 2px; background: var(--gold); margin: .6rem auto 0; }
+.jewel-card { border: 0; background: #fff; transition: transform .2s, box-shadow .2s; height: 100%; }
+.jewel-card:hover { transform: translateY(-4px); box-shadow: 0 .6rem 1.4rem rgba(0,0,0,.12); }
+.jewel-img { aspect-ratio: 1 / 1; width: 100%; object-fit: cover; display: block; }
+.jewel-placeholder { aspect-ratio: 1 / 1; width: 100%; display: flex; align-items: center; justify-content: center; font-size: 3.5rem;
+  background: linear-gradient(135deg, #efe5cf, #d9c28f); color: var(--gold); }
+.price { color: var(--gold); font-weight: 700; font-size: 1.1rem; }
+.category-tile { display: block; padding: 2rem 1rem; background: #fff; text-align: center; text-decoration: none; color: var(--ink);
+  border: 1px solid #eadfc8; transition: background .2s, color .2s; }
+.category-tile:hover { background: var(--ink); color: var(--gold); }
+footer { background: var(--ink); color: #bdb4a2; }
+footer a { color: var(--gold); text-decoration: none; }

@@ -1,14 +1,14 @@
-str1 = input("Enter first string: ")
-str2 = input("Enter second string: ")
+str1 = input("Enter: ")
+str2 = input("Enter:")
 
-lstr1 = set(str1.lower())
-lstr2 = set(str2.lower())
+s1 = set(str1.lower())
+s2 = set(str2.lower())
 
-common = lstr1 & lstr2
+common = s1 & s2
+final = []
 
-letters = []
 for ch in common:
     if ch.isalpha():
-        letters.append(ch)
+      final.append(ch)
 
-print(sorted(letters))
+print(sorted(final))

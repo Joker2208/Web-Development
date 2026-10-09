@@ -1,0 +1,23 @@
+{% extends "inventory/base.html" %}
+{% block title %}History{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h1 class="h3 m-0">Stock history</h1>
+  <div class="btn-group">
+    <a class="btn btn-outline-dark {% if not kind %}active{% endif %}" href="?">All</a>
+    <a class="btn btn-outline-dark {% if kind == 'IN' %}active{% endif %}" href="?type=IN">In</a>
+    <a class="btn btn-outline-dark {% if kind == 'OUT' %}active{% endif %}" href="?type=OUT">Out</a>
+  </div>
+</div>
+<div class="card shadow-sm"><div class="table-responsive">
+<table class="table table-hover mb-0">
+  <thead><tr><th>When</th><th>Product</th><th>Type</th><th class="text-end">Qty</th><th>By</th><th>Note</th></tr></thead>
+  <tbody>
+  {% for t in transactions %}
+    <tr><td>{{ t.created_at|date:"d M Y, H:i" }}</td><td>{{ t.product.name }}</td>
+    <td><span class="badge text-bg-{% if t.movement_type == 'IN' %}success{% else %}danger{% endif %}">{{ t.get_movement_type_display }}</span></td>
+    <td class="text-end">{{ t.quantity }}</td><td>{{ t.performed_by.username }}</td><td>{{ t.note }}</td></tr>
+  {% empty %}<tr><td colspan="6" class="text-center text-muted py-4">No movements recorded.</td></tr>{% endfor %}
+  </tbody>
+</table></div></div>
+{% endblock %}

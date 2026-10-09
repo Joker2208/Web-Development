@@ -1,0 +1,10 @@
+{% extends "catalogue/base.html" %}
+{% block title %}About | {{ shop_name }}{% endblock %}
+{% block content %}
+<div class="container py-5" style="max-width:820px">
+  <h1 class="section-title">About us</h1>
+  <p>{{ shop_name }} is a jewellery studio focused on honest materials and careful craftsmanship. Every piece in our collection is designed to be worn every day and kept for years.</p>
+  <p>We work with gold, silver, platinum and certified diamonds. If you cannot find what you are looking for, send us an enquiry and we will help you with custom designs.</p>
+  <div class="text-center mt-4"><a class="btn btn-gold" href="{% url 'contact' %}">Get in touch</a></div>
+</div>
+{% endblock %}

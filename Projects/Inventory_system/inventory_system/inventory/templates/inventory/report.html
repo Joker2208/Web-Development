@@ -1,0 +1,24 @@
+{% extends "inventory/base.html" %}
+{% block title %}Reports{% endblock %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <div><h1 class="h3 m-0">Stock report</h1><small class="text-muted">Generated {{ generated|date:"d M Y, H:i" }}</small></div>
+  <a class="btn btn-success" href="{% url 'report_csv' %}">Download CSV</a>
+</div>
+<div class="row g-3 mb-4">
+  <div class="col-md-4"><div class="card stat-card shadow-sm"><div class="card-body"><div class="text-muted small">Total stock value</div><div class="stat-value">₹{{ total_value|floatformat:2 }}</div></div></div></div>
+  <div class="col-md-4"><div class="card stat-card shadow-sm"><div class="card-body"><div class="text-muted small">Units received (30 days)</div><div class="stat-value">{{ in_30 }}</div></div></div></div>
+  <div class="col-md-4"><div class="card stat-card warn shadow-sm"><div class="card-body"><div class="text-muted small">Units sent out (30 days)</div><div class="stat-value">{{ out_30 }}</div></div></div></div>
+</div>
+<div class="row g-4">
+  <div class="col-lg-6"><div class="card shadow-sm"><div class="card-header fw-semibold">Stock by category</div>
+    <table class="table mb-0"><thead><tr><th>Category</th><th class="text-end">Units</th><th class="text-end">Value</th></tr></thead><tbody>
+    {% for c in by_category %}<tr><td>{{ c.name }}</td><td class="text-end">{{ c.units|default:0 }}</td><td class="text-end">₹{{ c.value|default:0|floatformat:2 }}</td></tr>{% endfor %}
+    </tbody></table></div></div>
+  <div class="col-lg-6"><div class="card shadow-sm"><div class="card-header fw-semibold">Items to reorder</div>
+    <table class="table mb-0"><thead><tr><th>Product</th><th class="text-end">Qty</th><th class="text-end">Reorder at</th></tr></thead><tbody>
+    {% for p in low_stock %}<tr><td>{{ p.name }}</td><td class="text-end text-danger">{{ p.quantity }}</td><td class="text-end">{{ p.reorder_level }}</td></tr>
+    {% empty %}<tr><td colspan="3" class="text-muted">Nothing to reorder.</td></tr>{% endfor %}
+    </tbody></table></div></div>
+</div>
+{% endblock %}

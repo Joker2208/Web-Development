@@ -1,6 +1,6 @@
-og = input("Enter: ")
+og = input("Enter:")
 og = og.replace(" ","")
-og.lower()
+og = og.lower()
 rev = og[::-1]
 
 if rev == og:
