@@ -1419,7 +1419,69 @@
 
 // Prototypes, Get/Set, Protection: Add a method greet through Person.prototype. Create an object with a getter and setter. Use Object.freeze() and show that changes are ignored. ☐
 
-function Person(name,age) {
-    let name = "Dipesh";
-    
+// function Person(name) {
+//     this.name = name;
+// }
+
+// let details = new Person("Dipesh");
+
+// Person.prototype.greet = function() {
+//     console.log(`Hello, my name is ${this.name}`);
+// };
+
+// details.greet();
+
+// let student = {
+//     _name : "Rahul",
+//     get name() {
+//         return this._name;
+//     },
+//     set name(newName) {
+//         if (typeof newName === "string" && newName.length > 0) { 
+//             this._name = newName;
+//         }
+//     }
+// };
+// student.name = "Lara Dutta";
+// console.log(student.name)
+
+// Object.freeze(student);
+
+// student.name = "Raj";
+// console.log(student.name);
+
+
+function BankAccount(owner,balance) {
+    this.owner = owner;
+    this._balance = balance;
 }
+let acc = new BankAccount("Dipesh", 1000)
+
+BankAccount.prototype.deposit = function(amount) {
+    this._balance += amount;
+    console.log(`Your balance is ${this._balance}`)
+};
+
+acc.deposit(1000);
+
+Object.defineProperty(BankAccount.prototype, "balance" , {
+    get: function() {
+        return this._balance;
+    },
+    set: function(balance) {
+        if (balance > 0) {
+            this._balance = balance;
+        }
+    }
+});
+
+acc.balance = 5000;
+console.log(acc.balance)
+
+function createCounter() {
+    let count = 0;
+    return createCounter;
+}
+
+//////////////////// Ques 91 ///////////////////////////
+
